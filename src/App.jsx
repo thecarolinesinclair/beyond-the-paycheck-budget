@@ -501,12 +501,17 @@ function Welcome({ onStart }) {
               </button>
             </>
           ) : (
-            <button
-              onClick={onStart}
-              style={{ padding: '14px 28px', background: C.terracotta, color: 'white', border: 'none', borderRadius: 10, fontWeight: 700, fontSize: 15, marginLeft: 'auto', display: 'inline-flex', alignItems: 'center', gap: 8, boxShadow: `0 4px 12px ${C.terracotta}40` }}
-            >
-              <Sparkles size={16} /> Let's begin
-            </button>
+            <>
+              <div style={{ width: '100%', padding: '10px 14px', background: C.soft, borderRadius: 8, fontSize: 12, color: C.muted, textAlign: 'center', marginBottom: 8 }}>
+                💡 This tool saves your data to your browser. For best results use it on the same device and browser each time. Clearing your browser cache will reset your data.
+              </div>
+              <button
+                onClick={onStart}
+                style={{ padding: '14px 28px', background: C.terracotta, color: 'white', border: 'none', borderRadius: 10, fontWeight: 700, fontSize: 15, marginLeft: 'auto', display: 'inline-flex', alignItems: 'center', gap: 8, boxShadow: `0 4px 12px ${C.terracotta}40` }}
+              >
+                <Sparkles size={16} /> Let's begin
+              </button>
+            </>
           )}
         </div>
       </div>
