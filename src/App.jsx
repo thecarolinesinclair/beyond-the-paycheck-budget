@@ -185,8 +185,8 @@ function Layout({ data, setData, update, activeSection, setActiveSection, active
               <Sparkles size={18} color="white" />
             </div>
             <div>
-              <div className="display" style={{ fontSize: 16, lineHeight: 1, color: C.ink }}>Beyond the Paycheck</div>
-              <div style={{ fontSize: 10, color: C.muted, letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: 2 }}>Budget System</div>
+              <div className="display" style={{ fontSize: 16, lineHeight: 1, color: C.ink }}>The Capital Allocation</div>
+              <div style={{ fontSize: 10, color: C.muted, letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: 2 }}>System</div>
             </div>
           </div>
         </div>
@@ -275,8 +275,8 @@ function Welcome({ onStart }) {
   const steps = [
     {
       kicker: 'Welcome',
-      title: 'Beyond the Paycheck',
-      italic: 'Budget System.',
+      title: 'The Capital Allocation',
+      italic: 'System.',
       lead: 'A complete money command center — 28 thoughtfully built tabs across 4 sections that work together to give you a true picture of your financial life.',
       body: (
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 14, marginTop: 8 }}>
@@ -431,8 +431,8 @@ function Welcome({ onStart }) {
             <Sparkles size={20} color="white" />
           </div>
           <div>
-            <div className="display" style={{ fontSize: 17, lineHeight: 1, color: C.ink, fontWeight: 600 }}>Beyond the Paycheck</div>
-            <div style={{ fontSize: 10, color: C.muted, letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: 2 }}>Budget System</div>
+            <div className="display" style={{ fontSize: 17, lineHeight: 1, color: C.ink, fontWeight: 600 }}>The Capital Allocation</div>
+            <div style={{ fontSize: 10, color: C.muted, letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: 2 }}>System</div>
           </div>
         </div>
 
