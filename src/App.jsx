@@ -276,7 +276,7 @@ function Welcome({ onStart }) {
     {
       kicker: 'Welcome',
       title: 'The Wealth',
-      italic: 'OS.'
+      italic: 'OS.',
       lead: 'Your personal wealth operating system — 28 thoughtfully built tabs across 4 sections that work together to give you a true picture of your financial life.',
       body: (
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 14, marginTop: 8 }}>
