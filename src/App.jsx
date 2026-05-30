@@ -2,27 +2,27 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { LineChart, Line, BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend, Area, AreaChart } from 'recharts';
 import { Wallet, TrendingUp, Calendar, PiggyBank, CreditCard, Home, Settings, RotateCw, Receipt, ShoppingBag, BarChart3, CalendarDays, DollarSign, Target, Layers, Sprout, Calculator, LineChart as LineIcon, Ban, ChevronRight, Plus, Trash2, Edit2, Check, X, Sparkles, ArrowUpRight, ArrowDownRight, Coffee } from 'lucide-react';
 
-// ====== ETSY-INSPIRED PALETTE ======
+// ====== WEALTH OS BRAND PALETTE — Navy · Gold · White ======
 const C = {
-  cream: '#FAF6F0',
-  paper: '#F4ECE0',
-  terracotta: '#C66B3D',
-  terracottaDark: '#A0512E',
-  sage: '#8FA67E',
-  sageDark: '#6B8460',
-  mustard: '#D4A04C',
-  blush: '#E8B4A0',
-  rust: '#B85C38',
-  forest: '#3D5A40',
-  ink: '#2D2A26',
-  charcoal: '#4A4640',
-  muted: '#8B8478',
-  soft: '#E8DFD0',
-  divider: '#DDD2BE',
+  cream: '#F8F6F1',        // page background — warm off-white
+  paper: '#FFFFFF',         // card surface — clean white
+  terracotta: '#C9A84C',   // gold — primary actions and highlights
+  terracottaDark: '#9E7D2E', // dark gold — button hover state
+  sage: '#1A2D5A',          // navy — secondary/positive indicators
+  sageDark: '#0F1C3D',      // deep navy — headers and strong text
+  mustard: '#C9A84C',       // gold accent (matches terracotta)
+  blush: '#E8D5A3',         // light gold — soft backgrounds and accents
+  rust: '#C0392B',          // red — errors, negative values, debts
+  forest: '#0F1C3D',        // deep navy — used in gradient headers
+  ink: '#0F1C3D',           // deep navy — primary text
+  charcoal: '#1A2D5A',      // navy — secondary text
+  muted: '#7A8CA0',         // slate — muted/hint text
+  soft: '#EAE6DC',          // warm surface — hover and alternate rows
+  divider: '#D5CCB8',       // warm border
 };
 
 const CATEGORIES = ['Housing','Utilities','Groceries','Dining Out','Transportation','Insurance','Healthcare','Entertainment','Subscriptions','Personal','Clothing','Gifts','Savings','Debt Payment','Investments','Education','Pets','Travel','Other'];
-const CATEGORY_COLORS = ['#C66B3D','#8FA67E','#D4A04C','#E8B4A0','#B85C38','#3D5A40','#8B8478','#6B8460','#A0512E','#D4A04C','#C66B3D','#8FA67E','#E8B4A0','#B85C38','#3D5A40','#8B8478','#6B8460','#A0512E','#D4A04C'];
+const CATEGORY_COLORS = ['#C9A84C','#1A2D5A','#9E7D2E','#2D4A8A','#E8D5A3','#0F1C3D','#D4B896','#3D5A9A','#B8962A','#4A6BAA','#CDBA8A','#6A85BA','#8B6914','#7A95CA','#C9A84C','#1A2D5A','#9E7D2E','#2D4A8A','#E8D5A3'];
 const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 
 // 50/30/20 mapping: Needs/Wants/Savings
@@ -31,7 +31,7 @@ const WANTS = ['Dining Out','Entertainment','Subscriptions','Personal','Clothing
 const SAVINGS = ['Savings','Investments'];
 
 // ====== STORAGE HELPERS ======
-const STORAGE_KEY = 'ultimate_budget_v1';
+const STORAGE_KEY = 'wealth_os_v1';
 const loadData = async () => {
   try {
     const r = localStorage.getItem(STORAGE_KEY);
@@ -101,7 +101,7 @@ export default function App() {
   }, [data, loaded]);
 
   if (!loaded || !data) {
-    return <div style={{ minHeight: '100vh', background: C.cream, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'serif', color: C.muted }}>Brewing your budget...</div>;
+    return <div style={{ minHeight: '100vh', background: C.cream, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'serif', color: C.muted }}>Loading your Wealth OS...</div>;
   }
 
   const update = (patch) => setData(prev => ({ ...prev, ...patch }));
@@ -126,7 +126,7 @@ export default function App() {
         .display-italic { font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 400; }
         button { font-family: inherit; cursor: pointer; }
         input, select, textarea { font-family: inherit; }
-        input:focus, select:focus, textarea:focus { outline: 2px solid ${C.terracotta}40; outline-offset: 1px; }
+        input:focus, select:focus, textarea:focus { outline: 2px solid ${C.terracotta}50; outline-offset: 1px; }
         .card { background: ${C.paper}; border-radius: 14px; padding: 24px; border: 1px solid ${C.divider}; }
         .card-hover:hover { border-color: ${C.terracotta}80; transition: border-color 0.2s; }
         .btn-primary { background: ${C.terracotta}; color: white; border: none; padding: 10px 18px; border-radius: 10px; font-weight: 600; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s; }
@@ -185,8 +185,8 @@ function Layout({ data, setData, update, activeSection, setActiveSection, active
               <Sparkles size={18} color="white" />
             </div>
             <div>
-              <div className="display" style={{ fontSize: 16, lineHeight: 1, color: C.ink }}>The Capital Allocation</div>
-              <div style={{ fontSize: 10, color: C.muted, letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: 2 }}>System</div>
+              <div className="display" style={{ fontSize: 16, lineHeight: 1, color: C.ink }}>The Wealth</div>
+              <div style={{ fontSize: 10, color: C.muted, letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: 2 }}>OS</div>
             </div>
           </div>
         </div>
@@ -275,9 +275,9 @@ function Welcome({ onStart }) {
   const steps = [
     {
       kicker: 'Welcome',
-      title: 'The Capital Allocation',
-      italic: 'System.',
-      lead: 'A complete money command center — 28 thoughtfully built tabs across 4 sections that work together to give you a true picture of your financial life.',
+      title: 'The Wealth',
+      italic: 'OS.'
+      lead: 'Your personal wealth operating system — 28 thoughtfully built tabs across 4 sections that work together to give you a true picture of your financial life.',
       body: (
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 14, marginTop: 8 }}>
           {[
@@ -431,8 +431,8 @@ function Welcome({ onStart }) {
             <Sparkles size={20} color="white" />
           </div>
           <div>
-            <div className="display" style={{ fontSize: 17, lineHeight: 1, color: C.ink, fontWeight: 600 }}>The Capital Allocation</div>
-            <div style={{ fontSize: 10, color: C.muted, letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: 2 }}>System</div>
+            <div className="display" style={{ fontSize: 17, lineHeight: 1, color: C.ink, fontWeight: 600 }}>The Wealth</div>
+            <div style={{ fontSize: 10, color: C.muted, letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: 2 }}>OS</div>
           </div>
         </div>
 
@@ -1509,7 +1509,7 @@ function SinkingFunds({ data, update, curr }) {
                   <span style={{ fontSize: 13, color: C.muted }}>of {fmt(f.goal, curr)}</span>
                 </div>
                 <div style={{ height: 10, background: C.cream, borderRadius: 5, overflow: 'hidden' }}>
-                  <div style={{ width: `${Math.min(pct, 100)}%`, height: '100%', background: `linear-gradient(90deg, ${C.sage}, ${C.sageDark})`, borderRadius: 5 }} />
+                  <div style={{ width: `${Math.min(pct, 100)}%`, height: '100%', background: `linear-gradient(90deg, ${C.terracotta}, ${C.terracottaDark})`, borderRadius: 5 }} />
                 </div>
                 <div style={{ fontSize: 11, color: C.muted, marginTop: 6 }}>{pct.toFixed(1)}% complete · {fmt(remaining, curr)} to go</div>
               </div>
@@ -1694,7 +1694,7 @@ function NetWorth({ data, update, curr }) {
 
   return (
     <div>
-      <div className="card grain" style={{ marginBottom: 22, background: `linear-gradient(135deg, ${C.forest}, ${C.sageDark})`, color: 'white', border: 'none' }}>
+      <div className="card grain" style={{ marginBottom: 22, background: `linear-gradient(135deg, ${C.sageDark}, ${C.sage})`, color: 'white', border: 'none' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
           <div>
             <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', opacity: 0.85 }}>Your Net Worth</div>
@@ -1703,7 +1703,7 @@ function NetWorth({ data, update, curr }) {
               {fmt(totalAssets, curr)} in assets · {fmt(totalLiab, curr)} in liabilities
             </div>
           </div>
-          <button onClick={snapshot} style={{ background: 'white', color: C.forest, border: 'none', padding: '10px 16px', borderRadius: 10, fontWeight: 700, fontSize: 13, cursor: 'pointer' }}>
+          <button onClick={snapshot} style={{ background: 'white', color: C.sageDark, border: 'none', padding: '10px 16px', borderRadius: 10, fontWeight: 700, fontSize: 13, cursor: 'pointer' }}>
             📸 Snapshot Today
           </button>
         </div>
